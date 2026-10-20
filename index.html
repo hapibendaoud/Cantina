@@ -5,19 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./output.css" rel="stylesheet">    <title>Document</title>
 </head>
-<body class="">
-    <header class="w-full h-fit flex flex-row items-center justify-between px-5">
-        <div class="">
-            <p>YouCode · Canteen</p>
-            <h1 class="text-7xl">This week's table</h1>
+<body class=""> 
+    <header class="w-full h-31 flex flex-row items-center justify-between px-5 bg-gray-800">
+        <div class="p-5">
+            <p class="text-amber-300 eagle-lake-regular ">YouCode · Canteen</p>
+            <h1 class="text-7xl font-extrabold text-white">This week's <span class="text-amber-300">table</span></h1>
         </div>
-        <div class="h-full flex items-center justify-center">
-            <button class="bg-blue-700 rounded-md px-1.5 py-0.5 text-white font-bold items-end">+ New Dish</button>
+        <div class="h-full w-[20%] flex items-end justify-end pr-3.5 pb-3.5">
+            <button class="bg-blue-700 rounded-2xl px-4 py-2 text-white font-bold cursor-pointer">+ New Dish</button>
         </div>
     </header>
-    <main class="grid grid-cols-3 w-full h-17 bg-amber-500">
-        <div class="col-span-2 bg-red-600">
-
+    <section class="grid grid-cols-4 gap-x-12 px-10 py-5 bg-gray-600">
+        <div class="flex flex-col rounded-2xl bg-gray-700 px-6 py-3 gap-y-3 border border-gray-800">
+            <p class="text-gray-300 font-bold">In reserve</p>
+            <span class="text-white font-bold text-3xl">0</span>
+        </div>
+        <div class="flex flex-col rounded-2xl bg-gray-700 px-6 py-3 gap-y-3 border border-gray-800">
+            <p class="text-gray-300 font-bold">Ready days</p>
+            <span class="text-white font-bold text-3xl">0/50</span>
+        </div>
+        <div class="flex flex-col rounded-2xl bg-gray-700 px-6 py-3 gap-y-3 border border-gray-800">
+            <p class="text-gray-300 font-bold">Weekly cost / learner</p>
+            <span class="text-white font-bold text-3xl">0 DH</span>
+        </div>
+        <div class="flex flex-col rounded-2xl bg-gray-700 px-6 py-3 gap-y-3 border border-gray-800">
+            <p class="text-gray-300 font-bold">Balanced diet</p>
+            <span class="text-white font-bold text-3xl">Needs veggie</span>
+        </div>
+    </section>
+    <main class="grid grid-cols-3 w-full h-fit bg-amber-500">
+        <div class="col-span-2 bg-red-600 grid grid-cols-2 gap-10 p-10">
+            <div class="flex flex-col justify-around bg-amber-50 h-100 rounded-2xl">
+                <div>
+                    <h1>Monday</h1>
+                </div>
+                <div>
+                    <div>
+                        <h3>Starter</h3>
+                        <p>Empty slot</p>
+                    </div>
+                    <div>
+                        <h3>Main</h3>
+                        <p>Empty slot</p>
+                    </div>
+                    <div>
+                        <h3>Dessert</h3>
+                        <p>Empty slot</p>
+                    </div>
+                </div>
+                <div>
+                    <p>Total</p>
+                    <span>0/50 DH</span>
+                </div>
+            </div>
+            <div class="bg-amber-50 h-30"></div>
+            <div></div>
         </div>
         <div class="col-span-1">
 
