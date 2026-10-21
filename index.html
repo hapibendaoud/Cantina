@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./output.css" rel="stylesheet">    <title>Document</title>
 </head>
-<body class=""> 
+<body class="bg-gray-600"> 
     <header class="w-full h-31 flex flex-row items-center justify-between px-5 bg-gray-800">
         <div class="p-5">
             <p class="text-amber-300 eagle-lake-regular ">YouCode · Canteen</p>
@@ -33,40 +33,280 @@
             <span class="text-white font-bold text-3xl">Needs veggie</span>
         </div>
     </section>
-    <main class="grid grid-cols-3 w-full h-fit bg-amber-500">
-        <div class="col-span-2 bg-red-600 grid grid-cols-2 gap-10 p-10">
-            <div class="flex flex-col justify-around bg-amber-50 h-100 rounded-2xl">
-                <div>
-                    <h1>Monday</h1>
+    <section class="grid grid-cols-3 bg-gray-700 h-fit px-10 py-4">
+        <div class="col-span-2 flex items-center">
+            <h1 class="text-4xl font-bold text-white">Weekly <span class="text-amber-300">Menu</span></h1>
+        </div>
+        <div class="col-span-1 flex items-center">
+            <h1 class="text-4xl font-bold text-white pl-8">The pantry</h1>
+        </div>
+    </section>
+    <main class="grid grid-cols-3 w-full h-fit">
+        <div class="col-span-2 bg-gray-600 grid grid-cols-2 gap-10 p-10">
+            <div class="flex flex-col justify-around bg-gray-400 h-fit rounded-2xl">
+                <div class="h-[15%] flex items-center justify-center bg-gray-500 rounded-t-2xl">
+                    <h1 class="text-2xl font-bold text-gray-200 py-5">Monday</h1>
                 </div>
-                <div>
-                    <div>
-                        <h3>Starter</h3>
-                        <p>Empty slot</p>
+                <div class="h-[70%] grid grid-rows-3 px-6">
+                    <div class="border-b border-gray-500 flex flex-col justify-center gap-3 px-3">
+                        <h3 class="text-gray-600 font-bold text-lg">Starter</h3>
+                        <!-- <p >Empty slot</p> -->
+                        <select class="text-3xl text-gray-100 italic border-0 focus:outline-none focus:ring-0" name="dish" id="">
+                            <option class="bg-gray-600" value="">Empty slot</option>
+                            <option class="bg-gray-600" value="">Tajin</option>
+                            <option class="bg-gray-600" value="">said</option>
+                        </select>
                     </div>
-                    <div>
-                        <h3>Main</h3>
-                        <p>Empty slot</p>
+                    <div class="border-b border-gray-500 flex flex-col justify-center gap-3 px-3 ">
+                        <h3 class="text-gray-600 font-bold text-lg">Main</h3>
+                        <select class="text-3xl text-gray-100 italic border-0 focus:outline-none focus:ring-0 rounded-3xl" name="dish" id="">
+                            <option class="bg-gray-600" value="">Empty slot</option>
+                            <option class="bg-gray-600" value="">Tajin</option>
+                            <option class="bg-gray-600" value="">said</option>
+                        </select>
                     </div>
-                    <div>
-                        <h3>Dessert</h3>
-                        <p>Empty slot</p>
+                    <div class="border-b border-gray-500 flex flex-col justify-center gap-3 px-3">
+                        <h3 class="text-gray-600 font-bold text-lg">Dessert</h3>
+                        <select class="text-3xl text-gray-100 italic border-0 focus:outline-none focus:ring-0" name="dish" id="">
+                            <option class="bg-gray-600" value="">Empty slot</option>
+                            <option class="bg-gray-600" value="">Tajin</option>
+                            <option class="bg-gray-600" value="">said</option>
+                        </select>
                     </div>
                 </div>
-                <div>
-                    <p>Total</p>
-                    <span>0/50 DH</span>
+                <div class="h-[15%] flex items-center justify-between  p-6">
+                    <p class="text-3xl font-bold text-white">Total</p>
+                    <p class="text-3xl text-white font-extrabold"><span>0/50</span> DH</p>
                 </div>
             </div>
-            <div class="bg-amber-50 h-30"></div>
-            <div></div>
+            <div class="flex flex-col justify-around bg-gray-400 h-fit rounded-2xl">
+                <div class="h-[15%] flex items-center justify-center bg-gray-500 rounded-t-2xl">
+                    <h1 class="text-2xl font-bold text-gray-200 py-5">Tuesday</h1>
+                </div>
+                <div class="h-[70%] grid grid-rows-3 px-6">
+                    <div class="border-b border-gray-500 flex flex-col justify-center gap-3 px-3">
+                        <h3 class="text-gray-600 font-bold text-lg">Starter</h3>
+                        <!-- <p >Empty slot</p> -->
+                        <select class="text-3xl text-gray-100 italic border-0 focus:outline-none focus:ring-0" name="dish" id="">
+                            <option class="bg-gray-600" value="">Empty slot</option>
+                            <option class="bg-gray-600" value="">Tajin</option>
+                            <option class="bg-gray-600" value="">said</option>
+                        </select>
+                    </div>
+                    <div class="border-b border-gray-500 flex flex-col justify-center gap-3 px-3 ">
+                        <h3 class="text-gray-600 font-bold text-lg">Main</h3>
+                        <select class="text-3xl text-gray-100 italic border-0 focus:outline-none focus:ring-0 rounded-3xl" name="dish" id="">
+                            <option class="bg-gray-600" value="">Empty slot</option>
+                            <option class="bg-gray-600" value="">Tajin</option>
+                            <option class="bg-gray-600" value="">said</option>
+                        </select>
+                    </div>
+                    <div class="border-b border-gray-500 flex flex-col justify-center gap-3 px-3">
+                        <h3 class="text-gray-600 font-bold text-lg">Dessert</h3>
+                        <select class="text-3xl text-gray-100 italic border-0 focus:outline-none focus:ring-0" name="dish" id="">
+                            <option class="bg-gray-600" value="">Empty slot</option>
+                            <option class="bg-gray-600" value="">Tajin</option>
+                            <option class="bg-gray-600" value="">said</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="h-[15%] flex items-center justify-between  p-6">
+                    <p class="text-3xl font-bold text-white">Total</p>
+                    <p class="text-3xl text-white font-extrabold"><span>0/50</span> DH</p>
+                </div>
+            </div>
+            <div class="flex flex-col justify-around bg-gray-400 h-fit rounded-2xl">
+                <div class="h-[15%] flex items-center justify-center bg-gray-500 rounded-t-2xl">
+                    <h1 class="text-2xl font-bold text-gray-200 py-5">Wednesday</h1>
+                </div>
+                <div class="h-[70%] grid grid-rows-3 px-6">
+                    <div class="border-b border-gray-500 flex flex-col justify-center gap-3 px-3">
+                        <h3 class="text-gray-600 font-bold text-lg">Starter</h3>
+                        <!-- <p >Empty slot</p> -->
+                        <select class="text-3xl text-gray-100 italic border-0 focus:outline-none focus:ring-0" name="dish" id="">
+                            <option class="bg-gray-600" value="">Empty slot</option>
+                            <option class="bg-gray-600" value="">Tajin</option>
+                            <option class="bg-gray-600" value="">said</option>
+                        </select>
+                    </div>
+                    <div class="border-b border-gray-500 flex flex-col justify-center gap-3 px-3 ">
+                        <h3 class="text-gray-600 font-bold text-lg">Main</h3>
+                        <select class="text-3xl text-gray-100 italic border-0 focus:outline-none focus:ring-0 rounded-3xl" name="dish" id="">
+                            <option class="bg-gray-600" value="">Empty slot</option>
+                            <option class="bg-gray-600" value="">Tajin</option>
+                            <option class="bg-gray-600" value="">said</option>
+                        </select>
+                    </div>
+                    <div class="border-b border-gray-500 flex flex-col justify-center gap-3 px-3">
+                        <h3 class="text-gray-600 font-bold text-lg">Dessert</h3>
+                        <select class="text-3xl text-gray-100 italic border-0 focus:outline-none focus:ring-0" name="dish" id="">
+                            <option class="bg-gray-600" value="">Empty slot</option>
+                            <option class="bg-gray-600" value="">Tajin</option>
+                            <option class="bg-gray-600" value="">said</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="h-[15%] flex items-center justify-between  p-6">
+                    <p class="text-3xl font-bold text-white">Total</p>
+                    <p class="text-3xl text-white font-extrabold"><span>0/50</span> DH</p>
+                </div>
+            </div>
+            <div class="flex flex-col justify-around bg-gray-400 h-fit rounded-2xl">
+                <div class="h-[15%] flex items-center justify-center bg-gray-500 rounded-t-2xl">
+                    <h1 class="text-2xl font-bold text-gray-200 py-5">Thursday</h1>
+                </div>
+                <div class="h-[70%] grid grid-rows-3 px-6">
+                    <div class="border-b border-gray-500 flex flex-col justify-center gap-3 px-3">
+                        <h3 class="text-gray-600 font-bold text-lg">Starter</h3>
+                        <!-- <p >Empty slot</p> -->
+                        <select class="text-3xl text-gray-100 italic border-0 focus:outline-none focus:ring-0" name="dish" id="">
+                            <option class="bg-gray-600" value="">Empty slot</option>
+                            <option class="bg-gray-600" value="">Tajin</option>
+                            <option class="bg-gray-600" value="">said</option>
+                        </select>
+                    </div>
+                    <div class="border-b border-gray-500 flex flex-col justify-center gap-3 px-3 ">
+                        <h3 class="text-gray-600 font-bold text-lg">Main</h3>
+                        <select class="text-3xl text-gray-100 italic border-0 focus:outline-none focus:ring-0 rounded-3xl" name="dish" id="">
+                            <option class="bg-gray-600" value="">Empty slot</option>
+                            <option class="bg-gray-600" value="">Tajin</option>
+                            <option class="bg-gray-600" value="">said</option>
+                        </select>
+                    </div>
+                    <div class="border-b border-gray-500 flex flex-col justify-center gap-3 px-3">
+                        <h3 class="text-gray-600 font-bold text-lg">Dessert</h3>
+                        <select class="text-3xl text-gray-100 italic border-0 focus:outline-none focus:ring-0" name="dish" id="">
+                            <option class="bg-gray-600" value="">Empty slot</option>
+                            <option class="bg-gray-600" value="">Tajin</option>
+                            <option class="bg-gray-600" value="">said</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="h-[15%] flex items-center justify-between  p-6">
+                    <p class="text-3xl font-bold text-white">Total</p>
+                    <p class="text-3xl text-white font-extrabold"><span>0/50</span> DH</p>
+                </div>
+            </div>
+            <div class="flex flex-col justify-around bg-gray-400 h-fit rounded-2xl">
+                <div class="h-[15%] flex items-center justify-center bg-gray-500 rounded-t-2xl">
+                    <h1 class="text-2xl font-bold text-gray-200 py-5">Friday</h1>
+                </div>
+                <div class="h-[70%] grid grid-rows-3 px-6">
+                    <div class="border-b border-gray-500 flex flex-col justify-center gap-3 px-3">
+                        <h3 class="text-gray-600 font-bold text-lg">Starter</h3>
+                        <!-- <p >Empty slot</p> -->
+                        <select class="text-3xl text-gray-100 italic border-0 focus:outline-none focus:ring-0" name="dish" id="">
+                            <option class="bg-gray-600" value="">Empty slot</option>
+                            <option class="bg-gray-600" value="">Tajin</option>
+                            <option class="bg-gray-600" value="">said</option>
+                        </select>
+                    </div>
+                    <div class="border-b border-gray-500 flex flex-col justify-center gap-3 px-3 ">
+                        <h3 class="text-gray-600 font-bold text-lg">Main</h3>
+                        <select class="text-3xl text-gray-100 italic border-0 focus:outline-none focus:ring-0 rounded-3xl" name="dish" id="">
+                            <option class="bg-gray-600" value="">Empty slot</option>
+                            <option class="bg-gray-600" value="">Tajin</option>
+                            <option class="bg-gray-600" value="">said</option>
+                        </select>
+                    </div>
+                    <div class="border-b border-gray-500 flex flex-col justify-center gap-3 px-3">
+                        <h3 class="text-gray-600 font-bold text-lg">Dessert</h3>
+                        <select class="text-3xl text-gray-100 italic border-0 focus:outline-none focus:ring-0" name="dish" id="">
+                            <option class="bg-gray-600" value="">Empty slot</option>
+                            <option class="bg-gray-600" value="">Tajin</option>
+                            <option class="bg-gray-600" value="">said</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="h-[15%] flex items-center justify-between  p-6">
+                    <p class="text-3xl font-bold text-white">Total</p>
+                    <p class="text-3xl text-white font-extrabold"><span>0/50</span> DH</p>
+                </div>
+            </div>
+            <div class="w-110 h-fit flex flex-col py-8 px-10 bg-gray-900 rounded-3xl gap-5">
+                <div class="flex items-center justify-between">
+                    <h1 class="text-3xl font-bold text-gray-300">New dish</h1>
+                    <p class="text-gray-200">x</p>
+                </div>
+                <label for="Dish-name" class="text-gray-200">Dish name</label>
+                <input type="text" name="Dish-name" placeholder="Dish Name" class="text-gray-200 bg-gray-700 py-2.5 px-3 rounded-2xl">
+                <label for="Category" class="text-gray-200 ">Category</label>
+                <select name="Category" id="" class="text-gray-200 bg-gray-700 py-2.5 px-3 rounded-2xl">
+                    <option value="">w</option>
+                    <option value="">w</option>
+                    <option value="">w</option>
+                </select>
+                <label for="Price" class="text-gray-200">Price</label>
+                <input type="text" name="Price" placeholder="Price" class="text-gray-200 bg-gray-700 py-2.5 px-3 rounded-2xl">
+                <label for="Quality-badge" class="text-gray-200">Quality badge</label>
+                <select name="Quality-badge" id="" class="text-gray-200 bg-gray-700 py-2.5 px-3 rounded-2xl">
+                    <option value="">d</option>
+                </select>
+            </div>
+            
         </div>
-        <div class="col-span-1">
-
+        <div class="col-span-1 w-full h-full">
+            <div class="h-fit w-full flex items-center justify-center py-3.5 bg-gray-700">
+                <input type="text" name="search" id="search_input" placeholder="Search for Dish" class="w-5/6 px-2.5 py-1.5 bg-gray-300 rounded-2xl focus:outline-0 focus:ring-0 text-gray-600">
+            </div>
+            <div class="w-full bg-gray-500 flex flex-col p-13 gap-y-5">
+                <div class="h-fit flex flex-col rounded-3xl p-6 bg-yellow-600 border border-gray-400">
+                    <div class="flex items-center justify-between pb-2.5">
+                        <div>
+                            <p class="text-gray-600 font-bold pl-3">Starter</p>
+                            <h2 class="text-white font-bold text-3xl">Harira</h2>
+                        </div>
+                        <p class="text-3xl text-white font-extrabold"><span>0</span> DH</p>
+                    </div>
+                    <p class="w-fit  text-gray-100 mb-2.5 bg-green-900 rounded-2xl px-3 py-1">Homemade</p>
+                    <div class="flex gap-1.5">
+                        <select name="" id="" class="w-5/7 focus:outline-none focus:ring-0 bg-amber-300 rounded-2xl pl-4">
+                            <option value="">dish</option>
+                        </select>
+                        <button class="bg-green-500 rounded-[50%] w-10 h-10">✎</button>
+                        <button class="bg-red-500 rounded-[50%] w-10 h-10">×</button>
+                    </div>
+                </div>
+                <div class="h-fit flex flex-col rounded-3xl p-6 bg-yellow-600 border border-gray-400">
+                    <div class="flex items-center justify-between pb-2.5">
+                        <div>
+                            <p class="text-gray-600 font-bold pl-3">Starter</p>
+                            <h2 class="text-white font-bold text-3xl">Harira</h2>
+                        </div>
+                        <p class="text-3xl text-white font-extrabold"><span>0</span> DH</p>
+                    </div>
+                    <p class="w-fit  text-gray-100 mb-2.5 bg-green-900 rounded-2xl px-3 py-1">Homemade</p>
+                    <div class="flex gap-1.5">
+                        <select name="" id="" class="w-5/7 focus:outline-none focus:ring-0 bg-amber-300 rounded-2xl pl-4">
+                            <option value="">dish</option>
+                        </select>
+                        <button class="bg-green-500 rounded-[50%] w-10 h-10">✎</button>
+                        <button class="bg-red-500 rounded-[50%] w-10 h-10">×</button>
+                    </div>
+                </div>
+                <div class="h-fit flex flex-col rounded-3xl p-6 bg-yellow-600 border border-gray-400">
+                    <div class="flex items-center justify-between pb-2.5">
+                        <div>
+                            <p class="text-gray-600 font-bold pl-3">Starter</p>
+                            <h2 class="text-white font-bold text-3xl">Harira</h2>
+                        </div>
+                        <p class="text-3xl text-white font-extrabold"><span>0</span> DH</p>
+                    </div>
+                    <p class="w-fit  text-gray-100 mb-2.5 bg-green-900 rounded-2xl px-3 py-1">Homemade</p>
+                    <div class="flex gap-1.5">
+                        <select name="" id="" class="w-5/7 focus:outline-none focus:ring-0 bg-amber-300 rounded-2xl pl-4">
+                            <option value="">dish</option>
+                        </select>
+                        <button class="bg-green-500 rounded-[50%] w-10 h-10">✎</button>
+                        <button class="bg-red-500 rounded-[50%] w-10 h-10">×</button>
+                    </div>
+                </div>
+            </div>
         </div>
-
-
     </main>
+    <section class="w-full h-150">
+
+    </section>
     <footer>
 
     </footer>
