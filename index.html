@@ -12,7 +12,7 @@
             <h1 class="text-7xl font-extrabold text-white">This week's <span class="text-amber-300">table</span></h1>
         </div>
         <div class="h-full w-[20%] flex items-end justify-end pr-3.5 pb-3.5">
-            <button class="bg-blue-700 rounded-2xl px-4 py-2 text-white font-bold cursor-pointer">+ New Dish</button>
+            <button id="newDish_btn" class="bg-blue-700 rounded-2xl px-4 py-2 text-white font-bold cursor-pointer">+ New Dish</button>
         </div>
     </header>
     <section class="grid grid-cols-4 gap-x-12 px-10 py-5 bg-gray-600">
@@ -42,7 +42,7 @@
         </div>
     </section>
     <main class="grid grid-cols-3 w-full h-fit">
-        <div class="col-span-2 bg-gray-600 grid grid-cols-2 gap-10 p-10">
+        <div class="col-span-2 bg-gray-600 grid grid-cols-2 gap-10 p-10 static">
             <div class="flex flex-col justify-around bg-gray-400 h-fit rounded-2xl">
                 <div class="h-[15%] flex items-center justify-center bg-gray-500 rounded-t-2xl">
                     <h1 class="text-2xl font-bold text-gray-200 py-5">Monday</h1>
@@ -223,25 +223,63 @@
                     <p class="text-3xl text-white font-extrabold"><span>0/50</span> DH</p>
                 </div>
             </div>
-            <div class="w-110 h-fit flex flex-col py-8 px-10 bg-gray-900 rounded-3xl gap-5">
-                <div class="flex items-center justify-between">
-                    <h1 class="text-3xl font-bold text-gray-300">New dish</h1>
-                    <p class="text-gray-200">x</p>
+            <div id="popup" class="hidden flex items-center justify-center absolute top-0 w-full h-full fixed left-0 bg-[#0e0b32]/18 backdrop-blur-md backdrop-saturate-159 border border-[#0e0b32]/0 shadow-[0_8px_32px_0_rgba(0,0,0,0)]">
+                <div class="w-130 h-fit flex flex-col py-8 px-10 bg-gray-900 rounded-3xl gap-5">
+                    <div class="flex items-center justify-between">
+                        <h1 class="text-3xl font-bold text-gray-300 italic">New dish</h1>
+                        <p id="close_popup" class="text-gray-200 text-2xl w-10 h-10 bg-gray-700 flex justify-center rounded-3xl pb-6 cursor-pointer">x</p>
+                    </div>
+                    <label for="Dish-name" class="text-gray-400">Dish name</label>
+                    <input type="text" id="Dish_name" placeholder="Dish Name" class="text-gray-200 bg-gray-700 py-2.5 px-3 rounded-2xl focus:outline-none focus:ring-0">
+                    <label for="Category" class="text-gray-400 ">Category</label>
+                    <select name="Category" id="" class="text-gray-400 bg-gray-700 py-2.5 px-3 rounded-2xl focus:outline-none focus:ring-0">
+                        <option value="">Starter</option>
+                        <option value="">Main</option>
+                        <option value="">Dessert</option>
+                    </select>
+                    <label for="Price" class="text-gray-400">Price</label>
+                    <input type="text" id="Price" placeholder="Price" class="text-gray-200 bg-gray-700 py-2.5 px-3 rounded-2xl focus:outline-none focus:ring-0">
+                    <label for="Quality-badge" class="text-gray-400">Quality badge</label>
+                    <select name="Quality-badge" id="" class="text-gray-400 bg-gray-700 py-2.5 px-3 rounded-2xl focus:outline-none focus:ring-0">
+                        <option value="">Vegetarian</option>
+                        <option value="">Homemade</option>
+                        <option value="">Healthy</option>
+                        <option value="">Spicy</option>
+                    </select>
+                    <div class="flex items-center justify-end">
+                        <bottun type="submit" id="cancel_popup" class="bg-gray-700 px-4 py-2 rounded-3xl text-white cursor-pointer hover:bg-gray-400">Cancel</bottun>
+                        <bottun id="save_btn" class="bg-red-700 px-4 py-2 rounded-3xl text-white ml-5 cursor-pointer hover:bg-red-400">Save</bottun>
+                    </div>
                 </div>
-                <label for="Dish-name" class="text-gray-200">Dish name</label>
-                <input type="text" name="Dish-name" placeholder="Dish Name" class="text-gray-200 bg-gray-700 py-2.5 px-3 rounded-2xl">
-                <label for="Category" class="text-gray-200 ">Category</label>
-                <select name="Category" id="" class="text-gray-200 bg-gray-700 py-2.5 px-3 rounded-2xl">
-                    <option value="">w</option>
-                    <option value="">w</option>
-                    <option value="">w</option>
-                </select>
-                <label for="Price" class="text-gray-200">Price</label>
-                <input type="text" name="Price" placeholder="Price" class="text-gray-200 bg-gray-700 py-2.5 px-3 rounded-2xl">
-                <label for="Quality-badge" class="text-gray-200">Quality badge</label>
-                <select name="Quality-badge" id="" class="text-gray-200 bg-gray-700 py-2.5 px-3 rounded-2xl">
-                    <option value="">d</option>
-                </select>
+            </div>
+            <div id="Edite_popup" class="hidden flex items-center justify-center absolute top-0 w-full h-full fixed left-0 bg-[#0e0b32]/18 backdrop-blur-md backdrop-saturate-159 border border-[#0e0b32]/0 shadow-[0_8px_32px_0_rgba(0,0,0,0)]">
+                <div class="w-130 h-fit flex flex-col py-8 px-10 bg-gray-900 rounded-3xl gap-5">
+                    <div class="flex items-center justify-between">
+                        <h1 class="text-3xl font-bold text-gray-300 italic">Edite dish</h1>
+                        <p id="close_Edite" class="text-gray-200 text-2xl w-10 h-10 bg-gray-700 flex justify-center rounded-3xl pb-6 cursor-pointer">x</p>
+                    </div>
+                    <label for="Dish-name" class="text-gray-400">Edite Dish name</label>
+                    <input id="dish_name" type="text" name="Dish-name" placeholder="Dish Name" class="text-gray-200 bg-gray-700 py-2.5 px-3 rounded-2xl focus:outline-none focus:ring-0">
+                    <label for="Category" class="text-gray-400 ">Edite Category</label>
+                    <select name="Category" id="Category" class="text-gray-400 bg-gray-700 py-2.5 px-3 rounded-2xl focus:outline-none focus:ring-0">
+                        <option value="Starter">Starter</option>
+                        <option value="Main">Main</option>
+                        <option value="Dessert">Dessert</option>
+                    </select>
+                    <label for="Price" class="text-gray-400">Edite Price</label>
+                    <input id="dish_price" type="number" name="Price" placeholder="Price" class="text-gray-200 bg-gray-700 py-2.5 px-3 rounded-2xl focus:outline-none focus:ring-0">
+                    <label for="Quality-badge" class="text-gray-400">Edite Quality badge</label>
+                    <select name="Quality-badge" id="qualityBadge" class="text-gray-400 bg-gray-700 py-2.5 px-3 rounded-2xl focus:outline-none focus:ring-0">
+                        <option value="Vegetarian">Vegetarian</option>
+                        <option value="Homemade">Homemade</option>
+                        <option value="Healthy">Healthy</option>
+                        <option value="Spicy">Spicy</option>
+                    </select>
+                    <div class="flex items-center justify-end">
+                        <bottun id="cancel_Edite" class="bg-gray-700 px-4 py-2 rounded-3xl text-white cursor-pointer hover:bg-gray-400">Cancel</bottun>
+                        <bottun id="save_btn_edite" class="bg-red-700 px-4 py-2 rounded-3xl text-white ml-5 cursor-pointer hover:bg-red-400">Save</bottun>
+                    </div>
+                </div>
             </div>
             
         </div>
@@ -250,57 +288,24 @@
                 <input type="text" name="search" id="search_input" placeholder="Search for Dish" class="w-5/6 px-2.5 py-1.5 bg-gray-300 rounded-2xl focus:outline-0 focus:ring-0 text-gray-600">
             </div>
             <div class="w-full bg-gray-500 flex flex-col p-13 gap-y-5">
-                <div class="h-fit flex flex-col rounded-3xl p-6 bg-yellow-600 border border-gray-400">
+                <div id="dish_section" class="h-fit flex flex-col rounded-3xl p-6 bg-gray-700 border border-gray-400">
                     <div class="flex items-center justify-between pb-2.5">
                         <div>
-                            <p class="text-gray-600 font-bold pl-3">Starter</p>
+                            <p class="text-gray-400 font-bold pl-3">Starter</p>
                             <h2 class="text-white font-bold text-3xl">Harira</h2>
                         </div>
                         <p class="text-3xl text-white font-extrabold"><span>0</span> DH</p>
                     </div>
-                    <p class="w-fit  text-gray-100 mb-2.5 bg-green-900 rounded-2xl px-3 py-1">Homemade</p>
+                    <p class="w-fit  text-gray-100 mb-2.5 bg-green-600 rounded-2xl px-3 py-1">Homemade</p>
                     <div class="flex gap-1.5">
-                        <select name="" id="" class="w-5/7 focus:outline-none focus:ring-0 bg-amber-300 rounded-2xl pl-4">
+                        <select name="" id="" class="w-5/7 focus:outline-none focus:ring-0 bg-gray-400 rounded-2xl pl-4">
                             <option value="">dish</option>
                         </select>
-                        <button class="bg-green-500 rounded-[50%] w-10 h-10">✎</button>
+                        <button id="Edite_btn" class="bg-green-500 rounded-[50%] w-10 h-10">✎</button>
                         <button class="bg-red-500 rounded-[50%] w-10 h-10">×</button>
                     </div>
                 </div>
-                <div class="h-fit flex flex-col rounded-3xl p-6 bg-yellow-600 border border-gray-400">
-                    <div class="flex items-center justify-between pb-2.5">
-                        <div>
-                            <p class="text-gray-600 font-bold pl-3">Starter</p>
-                            <h2 class="text-white font-bold text-3xl">Harira</h2>
-                        </div>
-                        <p class="text-3xl text-white font-extrabold"><span>0</span> DH</p>
-                    </div>
-                    <p class="w-fit  text-gray-100 mb-2.5 bg-green-900 rounded-2xl px-3 py-1">Homemade</p>
-                    <div class="flex gap-1.5">
-                        <select name="" id="" class="w-5/7 focus:outline-none focus:ring-0 bg-amber-300 rounded-2xl pl-4">
-                            <option value="">dish</option>
-                        </select>
-                        <button class="bg-green-500 rounded-[50%] w-10 h-10">✎</button>
-                        <button class="bg-red-500 rounded-[50%] w-10 h-10">×</button>
-                    </div>
-                </div>
-                <div class="h-fit flex flex-col rounded-3xl p-6 bg-yellow-600 border border-gray-400">
-                    <div class="flex items-center justify-between pb-2.5">
-                        <div>
-                            <p class="text-gray-600 font-bold pl-3">Starter</p>
-                            <h2 class="text-white font-bold text-3xl">Harira</h2>
-                        </div>
-                        <p class="text-3xl text-white font-extrabold"><span>0</span> DH</p>
-                    </div>
-                    <p class="w-fit  text-gray-100 mb-2.5 bg-green-900 rounded-2xl px-3 py-1">Homemade</p>
-                    <div class="flex gap-1.5">
-                        <select name="" id="" class="w-5/7 focus:outline-none focus:ring-0 bg-amber-300 rounded-2xl pl-4">
-                            <option value="">dish</option>
-                        </select>
-                        <button class="bg-green-500 rounded-[50%] w-10 h-10">✎</button>
-                        <button class="bg-red-500 rounded-[50%] w-10 h-10">×</button>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </main>
