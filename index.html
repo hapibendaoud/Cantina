@@ -42,8 +42,8 @@
         </div>
     </section>
     <main class="grid grid-cols-3 w-full h-fit">
-        <div class="col-span-2 bg-gray-600 grid grid-cols-2 gap-10 p-10 static">
-            <div class="week_card flex flex-col justify-around bg-gray-400 h-fit rounded-2xl">
+        <div id="week_cards" class="col-span-2 bg-gray-600 grid grid-cols-2 gap-10 p-10 static">
+            <div id="Monday" class="week_card flex flex-col justify-around bg-gray-400 h-fit rounded-2xl">
                 <div class="h-[15%] flex items-center justify-center bg-gray-500 rounded-t-2xl">
                     <h1 class="text-2xl font-bold text-gray-200 py-5">Monday</h1>
                 </div>
@@ -51,28 +51,22 @@
                     <div class="border-b border-gray-500 flex flex-col justify-center gap-3 px-3">
                         <h3 class="text-gray-600 font-bold text-lg">Starter</h3>
                         <!-- <p >Empty slot</p> -->
-                        <div class="dish_select w-full">
-                            <!-- <select class=" w-full text-3xl text-gray-100 italic border-0 focus:outline-none focus:ring-0" name="dish">
-                                <option class="bg-gray-600" value="">Empty slot</option>
-                                <option class="bg-gray-600" value="">Tajin</option>
-                                <option class="bg-gray-600" value="">said</option>
-                            </select> -->
+                        <div class="w-full">
+                            <select id="Starter" class="dish_select font-bold w-full text-3xl text-gray-100 italic border-0 focus:outline-none focus:ring-0" name="dish">
+                            
+                            </select>
                         </div>
                     </div>
                     <div class="border-b border-gray-500 flex flex-col justify-center gap-3 px-3 ">
                         <h3 class="text-gray-600 font-bold text-lg">Main</h3>
-                        <select class="text-3xl text-gray-100 italic border-0 focus:outline-none focus:ring-0 rounded-3xl" name="dish" id="">
-                            <option class="bg-gray-600" value="">Empty slot</option>
-                            <option class="bg-gray-600" value="">Tajin</option>
-                            <option class="bg-gray-600" value="">said</option>
+                        <select id="Main" class="dish_select font-bold text-3xl text-gray-100 italic border-0 focus:outline-none focus:ring-0 rounded-3xl" name="dish" id="">
+                        
                         </select>
                     </div>
-                    <div class="border-b border-gray-500 flex flex-col justify-center gap-3 px-3">
+                    <div class="border-b border-gray-500 flex flex-col justify-center gap-3 px-3 ">
                         <h3 class="text-gray-600 font-bold text-lg">Dessert</h3>
-                        <select class="text-3xl text-gray-100 italic border-0 focus:outline-none focus:ring-0" name="dish" id="">
-                            <option class="bg-gray-600" value="">Empty slot</option>
-                            <option class="bg-gray-600" value="">Tajin</option>
-                            <option class="bg-gray-600" value="">said</option>
+                        <select id="Dessert" class="dish_select font-bold text-3xl text-gray-100 italic border-0 focus:outline-none focus:ring-0 rounded-3xl" name="dish" id="">
+                        
                         </select>
                     </div>
                 </div>
@@ -81,7 +75,7 @@
                     <p class="text-3xl text-white font-extrabold"><span>0/50</span> DH</p>
                 </div>
             </div>
-            <div class="flex flex-col justify-around bg-gray-400 h-fit rounded-2xl">
+            <div id="Tuesday" class="week_card flex flex-col justify-around bg-gray-400 h-fit rounded-2xl">
                 <div class="h-[15%] flex items-center justify-center bg-gray-500 rounded-t-2xl">
                     <h1 class="text-2xl font-bold text-gray-200 py-5">Tuesday</h1>
                 </div>
@@ -89,26 +83,20 @@
                     <div class="border-b border-gray-500 flex flex-col justify-center gap-3 px-3">
                         <h3 class="text-gray-600 font-bold text-lg">Starter</h3>
                         <!-- <p >Empty slot</p> -->
-                        <select class="text-3xl text-gray-100 italic border-0 focus:outline-none focus:ring-0" name="dish" id="">
-                            <option class="bg-gray-600" value="">Empty slot</option>
-                            <option class="bg-gray-600" value="">Tajin</option>
-                            <option class="bg-gray-600" value="">said</option>
+                        <select id="Starter" class="dish_select font-bold text-3xl text-gray-100 italic border-0 focus:outline-none focus:ring-0" name="dish" id="">
+                        
                         </select>
                     </div>
                     <div class="border-b border-gray-500 flex flex-col justify-center gap-3 px-3 ">
                         <h3 class="text-gray-600 font-bold text-lg">Main</h3>
-                        <select class="text-3xl text-gray-100 italic border-0 focus:outline-none focus:ring-0 rounded-3xl" name="dish" id="">
-                            <option class="bg-gray-600" value="">Empty slot</option>
-                            <option class="bg-gray-600" value="">Tajin</option>
-                            <option class="bg-gray-600" value="">said</option>
+                        <select id="Main" class="dish_select font-bold text-3xl text-gray-100 italic border-0 focus:outline-none focus:ring-0 rounded-3xl" name="dish" id="">
+                            
                         </select>
                     </div>
                     <div class="border-b border-gray-500 flex flex-col justify-center gap-3 px-3">
                         <h3 class="text-gray-600 font-bold text-lg">Dessert</h3>
-                        <select class="text-3xl text-gray-100 italic border-0 focus:outline-none focus:ring-0" name="dish" id="">
-                            <option class="bg-gray-600" value="">Empty slot</option>
-                            <option class="bg-gray-600" value="">Tajin</option>
-                            <option class="bg-gray-600" value="">said</option>
+                        <select id="Dessert" class="dish_select font-bold text-3xl text-gray-100 italic border-0 focus:outline-none focus:ring-0" name="dish" id="">
+                            
                         </select>
                     </div>
                 </div>
@@ -117,7 +105,7 @@
                     <p class="text-3xl text-white font-extrabold"><span>0/50</span> DH</p>
                 </div>
             </div>
-            <div class="flex flex-col justify-around bg-gray-400 h-fit rounded-2xl">
+            <div id="Wednesday" class="week_card flex flex-col justify-around bg-gray-400 h-fit rounded-2xl">
                 <div class="h-[15%] flex items-center justify-center bg-gray-500 rounded-t-2xl">
                     <h1 class="text-2xl font-bold text-gray-200 py-5">Wednesday</h1>
                 </div>
@@ -125,26 +113,20 @@
                     <div class="border-b border-gray-500 flex flex-col justify-center gap-3 px-3">
                         <h3 class="text-gray-600 font-bold text-lg">Starter</h3>
                         <!-- <p >Empty slot</p> -->
-                        <select class="text-3xl text-gray-100 italic border-0 focus:outline-none focus:ring-0" name="dish" id="">
-                            <option class="bg-gray-600" value="">Empty slot</option>
-                            <option class="bg-gray-600" value="">Tajin</option>
-                            <option class="bg-gray-600" value="">said</option>
+                        <select id="Starter" class="dish_select font-bold text-3xl text-gray-100 italic border-0 focus:outline-none focus:ring-0" name="dish" id="">
+                            
                         </select>
                     </div>
                     <div class="border-b border-gray-500 flex flex-col justify-center gap-3 px-3 ">
                         <h3 class="text-gray-600 font-bold text-lg">Main</h3>
-                        <select class="text-3xl text-gray-100 italic border-0 focus:outline-none focus:ring-0 rounded-3xl" name="dish" id="">
-                            <option class="bg-gray-600" value="">Empty slot</option>
-                            <option class="bg-gray-600" value="">Tajin</option>
-                            <option class="bg-gray-600" value="">said</option>
+                        <select id="Main" class="dish_select font-bold text-3xl text-gray-100 italic border-0 focus:outline-none focus:ring-0 rounded-3xl" name="dish" id="">
+                            
                         </select>
                     </div>
                     <div class="border-b border-gray-500 flex flex-col justify-center gap-3 px-3">
                         <h3 class="text-gray-600 font-bold text-lg">Dessert</h3>
-                        <select class="text-3xl text-gray-100 italic border-0 focus:outline-none focus:ring-0" name="dish" id="">
-                            <option class="bg-gray-600" value="">Empty slot</option>
-                            <option class="bg-gray-600" value="">Tajin</option>
-                            <option class="bg-gray-600" value="">said</option>
+                        <select id="Dessert" class="dish_select font-bold text-3xl text-gray-100 italic border-0 focus:outline-none focus:ring-0" name="dish" id="">
+                        
                         </select>
                     </div>
                 </div>
@@ -153,7 +135,7 @@
                     <p class="text-3xl text-white font-extrabold"><span>0/50</span> DH</p>
                 </div>
             </div>
-            <div class="flex flex-col justify-around bg-gray-400 h-fit rounded-2xl">
+            <div id="Thursday" class="week_card flex flex-col justify-around bg-gray-400 h-fit rounded-2xl">
                 <div class="h-[15%] flex items-center justify-center bg-gray-500 rounded-t-2xl">
                     <h1 class="text-2xl font-bold text-gray-200 py-5">Thursday</h1>
                 </div>
@@ -161,26 +143,20 @@
                     <div class="border-b border-gray-500 flex flex-col justify-center gap-3 px-3">
                         <h3 class="text-gray-600 font-bold text-lg">Starter</h3>
                         <!-- <p >Empty slot</p> -->
-                        <select class="text-3xl text-gray-100 italic border-0 focus:outline-none focus:ring-0" name="dish" id="">
-                            <option class="bg-gray-600" value="">Empty slot</option>
-                            <option class="bg-gray-600" value="">Tajin</option>
-                            <option class="bg-gray-600" value="">said</option>
+                        <select id="Starter" class="dish_select font-bold text-3xl text-gray-100 italic border-0 focus:outline-none focus:ring-0" name="dish" id="">
+                        
                         </select>
                     </div>
                     <div class="border-b border-gray-500 flex flex-col justify-center gap-3 px-3 ">
                         <h3 class="text-gray-600 font-bold text-lg">Main</h3>
-                        <select class="text-3xl text-gray-100 italic border-0 focus:outline-none focus:ring-0 rounded-3xl" name="dish" id="">
-                            <option class="bg-gray-600" value="">Empty slot</option>
-                            <option class="bg-gray-600" value="">Tajin</option>
-                            <option class="bg-gray-600" value="">said</option>
+                        <select id="Main" class="dish_select font-bold text-3xl text-gray-100 italic border-0 focus:outline-none focus:ring-0 rounded-3xl" name="dish" id="">
+                        
                         </select>
                     </div>
                     <div class="border-b border-gray-500 flex flex-col justify-center gap-3 px-3">
                         <h3 class="text-gray-600 font-bold text-lg">Dessert</h3>
-                        <select class="text-3xl text-gray-100 italic border-0 focus:outline-none focus:ring-0" name="dish" id="">
-                            <option class="bg-gray-600" value="">Empty slot</option>
-                            <option class="bg-gray-600" value="">Tajin</option>
-                            <option class="bg-gray-600" value="">said</option>
+                        <select id="Dessert class="dish_select font-bold text-3xl text-gray-100 italic border-0 focus:outline-none focus:ring-0" name="dish" id="">
+                        
                         </select>
                     </div>
                 </div>
@@ -189,7 +165,7 @@
                     <p class="text-3xl text-white font-extrabold"><span>0/50</span> DH</p>
                 </div>
             </div>
-            <div class="flex flex-col justify-around bg-gray-400 h-fit rounded-2xl">
+            <div id="Friday" class="week_card flex flex-col justify-around bg-gray-400 h-fit rounded-2xl">
                 <div class="h-[15%] flex items-center justify-center bg-gray-500 rounded-t-2xl">
                     <h1 class="text-2xl font-bold text-gray-200 py-5">Friday</h1>
                 </div>
@@ -197,26 +173,20 @@
                     <div class="border-b border-gray-500 flex flex-col justify-center gap-3 px-3">
                         <h3 class="text-gray-600 font-bold text-lg">Starter</h3>
                         <!-- <p >Empty slot</p> -->
-                        <select class="text-3xl text-gray-100 italic border-0 focus:outline-none focus:ring-0" name="dish" id="">
-                            <option class="bg-gray-600" value="">Empty slot</option>
-                            <option class="bg-gray-600" value="">Tajin</option>
-                            <option class="bg-gray-600" value="">said</option>
+                        <select id="Starter" class="dish_select font-bold text-3xl text-gray-100 italic border-0 focus:outline-none focus:ring-0" name="dish" id="">
+                        
                         </select>
                     </div>
                     <div class="border-b border-gray-500 flex flex-col justify-center gap-3 px-3 ">
                         <h3 class="text-gray-600 font-bold text-lg">Main</h3>
-                        <select class="text-3xl text-gray-100 italic border-0 focus:outline-none focus:ring-0 rounded-3xl" name="dish" id="">
-                            <option class="bg-gray-600" value="">Empty slot</option>
-                            <option class="bg-gray-600" value="">Tajin</option>
-                            <option class="bg-gray-600" value="">said</option>
+                        <select id="Main class="dish_select font-bold text-3xl text-gray-100 italic border-0 focus:outline-none focus:ring-0 rounded-3xl" name="dish" id="">
+                        
                         </select>
                     </div>
                     <div class="border-b border-gray-500 flex flex-col justify-center gap-3 px-3">
                         <h3 class="text-gray-600 font-bold text-lg">Dessert</h3>
-                        <select class="text-3xl text-gray-100 italic border-0 focus:outline-none focus:ring-0" name="dish" id="">
-                            <option class="bg-gray-600" value="">Empty slot</option>
-                            <option class="bg-gray-600" value="">Tajin</option>
-                            <option class="bg-gray-600" value="">said</option>
+                        <select id="Dessertclass="dish_select font-bold text-3xl text-gray-100 italic border-0 focus:outline-none focus:ring-0" name="dish" id="">
+                        
                         </select>
                     </div>
                 </div>

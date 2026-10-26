@@ -26,6 +26,7 @@
     --color-gray-700: oklch(37.3% 0.034 259.733);
     --color-gray-800: oklch(27.8% 0.033 256.848);
     --color-gray-900: oklch(21% 0.034 264.665);
+    --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
     --text-lg: 1.125rem;
@@ -516,6 +517,9 @@
   .text-amber-300 {
     color: var(--color-amber-300);
   }
+  .text-black {
+    color: var(--color-black);
+  }
   .text-gray-100 {
     color: var(--color-gray-100);
   }
@@ -530,6 +534,9 @@
   }
   .text-gray-600 {
     color: var(--color-gray-600);
+  }
+  .text-gray-800 {
+    color: var(--color-gray-800);
   }
   .text-white {
     color: var(--color-white);

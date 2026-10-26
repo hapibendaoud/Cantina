@@ -17,14 +17,16 @@ const dishes = [
         name: "Harira",
         price: 20,
         categor: "Main",
-        qualityBadge: "Healthy"
+        qualityBadge: "Healthy",
+        inReserve: false
     },
     {
         id: 2,
         name: "tajin",
         price: 20,
         categor: "Main",
-        qualityBadge: "Healthy"
+        qualityBadge: "Healthy",
+        inReserve: false
     },
     // {
     //     id: 3,
@@ -48,6 +50,9 @@ const dishes = [
     //     qualityBadge: "spicy"
     // },
 ];
+// statique section
+
+
 
 // div
 const dish_section =document.getElementById("dish_section");
@@ -59,11 +64,11 @@ function addDishes(){
         div_card.setAttribute("id", "dish_card_section");
         div_card.classList = "dish_card_section h-fit flex flex-col rounded-3xl p-6 bg-gray-700 border border-gray-400";
         div_card.innerHTML =    `<div  class="flex items-center justify-between pb-2.5">
-                                <div>
-                                    <p class="text-gray-300 font-bold pl-3">${dish.categor}</p>
-                                    <h2 class="text-yellow-400 font-extrabold text-5xl">${dish.name}</h2>
-                                </div>
-                                <p class="text-4xl text-white font-extrabold"><span>${dish.price}</span> DH</p>
+                                    <div>
+                                        <p class="text-gray-300 font-bold pl-3">${dish.categor}</p>
+                                        <h2 class="text-yellow-400 font-extrabold text-5xl">${dish.name}</h2>
+                                    </div>
+                                    <p class="text-4xl text-white font-extrabold"><span>${dish.price}</span> DH</p>
                                 </div>
                                 <p class="w-fit  text-gray-100 mb-2.5 bg-green-600 rounded-2xl px-3 py-1">${dish.qualityBadge}</p>
                                 <div class="flex w-full justify-end gap-1.5">
@@ -72,8 +77,29 @@ function addDishes(){
                                 </div>`;
         dish_section.append(div_card);
     });
+    // addToSelect();
 }
 addDishes();
+
+function addToSelect(){
+    const dish_select_class = document.querySelectorAll(".dish_select");
+    dish_select_class.forEach((ele)=>{
+        ele.innerHTML = "";
+        let option_shoose = document.createElement("option");
+        option_shoose.className = "bg-gray-600";
+        option_shoose.textContent = "--Shoose--"
+        ele.append(option_shoose);
+        dishes.forEach((dish)=>{
+            let option = document.createElement("option");
+            option.className = "bg-gray-600 text-gray-200 ";
+            option.setAttribute("value", dish.name);
+            option.textContent = dish.name;
+            ele.append(option);
+        });
+    })
+
+}
+addToSelect(); 
 
 
 
@@ -153,7 +179,8 @@ popup.addEventListener("click", (e)=>{
             name: nameValue, 
             price: priceValue, 
             Categor: categoryValue,
-            qualityBadge: badgeValue
+            qualityBadge: badgeValue,
+            inReserve: false
         });
 
         dish_name.value = "";
@@ -163,6 +190,7 @@ popup.addEventListener("click", (e)=>{
         addDishes();
         popup.classList.add("hidden");
     }
+    addToSelect(); 
 })
 
 const edite_dish_name = document.getElementById("edite_dish_name");
@@ -193,6 +221,7 @@ Edite_popup.addEventListener("click", (e)=>{
     const close = e.target.closest("#close_Edite");
     const cancel = e.target.closest("#cancel_Edite");
     const save = e.target.closest("#save_btn_edite");
+    
     if(close){
         Edite_popup.classList.add("hidden");
     }
@@ -210,17 +239,12 @@ Edite_popup.addEventListener("click", (e)=>{
     }
 })
 
-
-
-// function addToSelect(){
-//     const dish_select = document.getElementsByClassName("dish_select");
-//     const select = document.createElement("select");
-//     select.classList = " w-full text-3xl text-gray-100 italic border-0 focus:outline-none focus:ring-0";
-//     dish_select.append(select);
-// ;
-
+// function blurOnChange(){
+//     // const sele
 // }
-// addToSelect(); 
+// const week_cards = document.querySelectorAll(".week_card");
+const week_cards = document.getElementById("week_cards");
+week_cards.addEventListener()
 
 
 
