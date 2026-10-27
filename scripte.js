@@ -52,7 +52,13 @@ const dishes = [
     //     qualityBadge: "spicy"
     // },
 ];
-const inReserve = [];
+const money = {
+    Monday:0,
+    Tuesday:0,
+    Wednesday:0,
+    Thursday:0,
+    Friday:0,
+}
 // statique section
 
 
@@ -106,6 +112,7 @@ function addToSelectStarter(){
                 let option = document.createElement("option");
                 option.className = "bg-gray-600 text-gray-200";
                 option.dataset.id = dish.id;
+                option.dataset.price = dish.price;
                 option.setAttribute("value", dish.name);
                 option.textContent = dish.name;
                 if(dish.name === currentVal) option.selected = true;
@@ -132,6 +139,7 @@ function addToSelectMain(){
                 let option = document.createElement("option");
                 option.className = "bg-gray-600 text-gray-200";
                 option.dataset.id = dish.id;
+                option.dataset.price = dish.price;
                 option.setAttribute("value", dish.name);
                 option.textContent = dish.name;
                 if(dish.name === currentVal) option.selected = true;
@@ -158,6 +166,7 @@ function addToSelectDessert(){
                 let option = document.createElement("option");
                 option.className = "bg-gray-600 text-gray-200";
                 option.dataset.id = dish.id;
+                option.dataset.price = dish.price;
                 option.setAttribute("value", dish.name);
                 option.textContent = dish.name;
                 if(dish.name === currentVal) option.selected = true;
@@ -306,18 +315,65 @@ const selected_dish = document.querySelectorAll(".selected");
         
 //     })
 // })
-document.addEventListener("change", (e) => {
+
+function finalPrice(){
+    document.getElementById("Monday_monto").textContent = money.Monday;
+    document.querySelector(".Tuesday_monto").textContent = money.Tuesday;
+    document.querySelector(".Wednesday_monto").textContent = money.Wednesday;
+    document.querySelector(".Thursday_monto").textContent = money.Thursday;
+    document.querySelector(".Friday_monto").textContent = money.Friday;
+}
+
+
+
+
+
+const Monday =document.getElementById("Monday");
+week_cards.addEventListener("change", (e) => {
     if (e.target.classList.contains("selected")) {
+        let dayName = "";
+        if (e.target.classList.contains("Monday")) dayName = "Monday";
+        else if (e.target.classList.contains("Tuesday")) dayName = "Tuesday";
+        else if (e.target.classList.contains("Wednesday")) dayName = "Wednesday";
+        else if (e.target.classList.contains("Thursday")) dayName = "Thursday";
+        else if (e.target.classList.contains("Friday")) dayName = "Friday";
+        if (dayName) {
+            const cardContainer = document.getElementById(dayName);
+            const selectsInDay = cardContainer.querySelectorAll("select");
+            
+            let totalDayPrice = 0;
+            selectsInDay.forEach(sel => {
+                const selectedOpt = sel.selectedOptions[0];
+                if (selectedOpt && selectedOpt.dataset.price) {
+                    totalDayPrice += Number(selectedOpt.dataset.price);
+                }
+            });
+            if (totalDayPrice > 50) {
+                alert("Stop U have Reached the max");
+                e.target.value = ""; 
+                totalDayPrice = 0;
+                selectsInDay.forEach(sel => {
+                    const selectedOpt = sel.selectedOptions[0];
+                    if (selectedOpt && selectedOpt.dataset.price) {
+                        totalDayPrice += Number(selectedOpt.dataset.price);
+                    }
+                });
+                money[dayName] = totalDayPrice;
+                finalPrice();
+                return; 
+            }
+            money[dayName] = totalDayPrice;
+        }
         const selected_option = e.target.selectedOptions[0];
         const dish_id = selected_option.dataset.id;
-        
         dishes.forEach((dish) => {
             if (Number(dish_id) === dish.id) {
                 dish.inReserve = true;
-                addDishes();
-                updateAllSelects();
             }
         });
+        addDishes();
+        updateAllSelects();
+        finalPrice();
     }
 });
 
