@@ -41,7 +41,8 @@ const dishes = [
         name: "Bastila",
         price: 20,
         categor: "Main",
-        qualityBadge: "spicy"
+        qualityBadge: "spicy",
+        inReserve: false
     },
     // {
     //     id: 3,
@@ -77,9 +78,10 @@ function addDishes(){
                                     <button id="Edite_btn" class="Edite_btn bg-green-600 rounded-3xl px-5 py-1.5 text-white text-lg font-bold hover:bg-green-500">Edite</button>
                                     <button id="delet_btn" class="bg-red-600 rounded-3xl px-5 py-1.5 text-white text-lg font-bold hover:bg-red-500">Delete</button>
                                 </div>
-                                ${dish.inReserve === true ? `<div class="absolute z-10 flex items-center justify-center bg-blue-400 w-full h-full rounded-3xl top-0 left-0 opacity-50">
-                                    <Button class="reset_btn bg-green-600 z-0 px-10 py-2 rounded-3xl hover:bg-green-200" data-index="${index}">Reset</Button>
+                                ${dish.inReserve === true ? `<div class="blur_div absolute flex items-center justify-center bg-blue-400 w-full h-full rounded-3xl top-0 left-0 opacity-50">
+                                    <Button id='btn' class="reset_btn bg-green-600 z-0 px-10 py-2 rounded-3xl hover:bg-green-200" data-index="${index}">Reset</Button>
                                     </div>` : ''}
+                                
                                 `;
         dish_section.append(div_card);
     });
@@ -87,33 +89,10 @@ function addDishes(){
 }
 addDishes();
 
-function addToSelectDessert(){
-    const dish_select_class = document.querySelectorAll(".dish_select_dessert");
-    dish_select_class.forEach((ele)=>{
-        ele.innerHTML = "";
-        let option_shoose = document.createElement("option");
-        option_shoose.className = "bg-gray-600";
-        option_shoose.setAttribute("disabled", "");
-        option_shoose.setAttribute("selected", "");
-        option_shoose.textContent = "--Choose--"
-        ele.append(option_shoose);
-        dishes.forEach((dish)=>{
-            if(dish.categor.toLocaleLowerCase() === "dessert"){
-            let option = document.createElement("option");
-                option.className = "bg-gray-600 text-gray-200 ";
-                option.dataset.id = dish.id;
-                option.setAttribute("value", dish.name);
-                option.textContent = dish.name;
-                ele.append(option);
-            }
-        });
-    })
-
-}
-addToSelectDessert(); 
 function addToSelectStarter(){
     const dish_select_class = document.querySelectorAll(".dish_select_starter");
     dish_select_class.forEach((ele)=>{
+        const currentVal = ele.value;
         ele.innerHTML = "";
         let option_shoose = document.createElement("option");
         option_shoose.className = "bg-gray-600";
@@ -121,25 +100,25 @@ function addToSelectStarter(){
         option_shoose.setAttribute("selected", "");
         option_shoose.textContent = "--Choose--"
         ele.append(option_shoose);
+        
         dishes.forEach((dish)=>{
-            if(dish.categor.toLocaleLowerCase() === "starter"){
+            if(dish.categor.toLocaleLowerCase() === "starter" && (dish.inReserve === false || dish.name === currentVal)){
                 let option = document.createElement("option");
-                option.className = "bg-gray-600 text-gray-200 ";
+                option.className = "bg-gray-600 text-gray-200";
                 option.dataset.id = dish.id;
                 option.setAttribute("value", dish.name);
                 option.textContent = dish.name;
+                if(dish.name === currentVal) option.selected = true;
                 ele.append(option);
             }
-            
         });
-    })
-
+    });
 }
-addToSelectStarter(); 
 
 function addToSelectMain(){
     const dish_select_class = document.querySelectorAll(".dish_select_Main");
     dish_select_class.forEach((ele)=>{
+        const currentVal = ele.value;
         ele.innerHTML = "";
         let option_shoose = document.createElement("option");
         option_shoose.className = "bg-gray-600";
@@ -147,23 +126,52 @@ function addToSelectMain(){
         option_shoose.setAttribute("selected", "");
         option_shoose.textContent = "--Choose--"
         ele.append(option_shoose);
+        
         dishes.forEach((dish)=>{
-            if(dish.categor.toLocaleLowerCase() === "main"){
+            if(dish.categor.toLocaleLowerCase() === "main" && (dish.inReserve === false || dish.name === currentVal)){
                 let option = document.createElement("option");
-                option.className = "bg-gray-600 text-gray-200 ";
+                option.className = "bg-gray-600 text-gray-200";
                 option.dataset.id = dish.id;
                 option.setAttribute("value", dish.name);
                 option.textContent = dish.name;
+                if(dish.name === currentVal) option.selected = true;
                 ele.append(option);
             }
-            
         });
-    })
-
+    });
 }
-addToSelectMain(); 
 
-
+function addToSelectDessert(){
+    const dish_select_class = document.querySelectorAll(".dish_select_dessert");
+    dish_select_class.forEach((ele)=>{
+        const currentVal = ele.value;
+        ele.innerHTML = "";
+        let option_shoose = document.createElement("option");
+        option_shoose.className = "bg-gray-600";
+        option_shoose.setAttribute("disabled", "");
+        option_shoose.setAttribute("selected", "");
+        option_shoose.textContent = "--Choose--"
+        ele.append(option_shoose);
+        
+        dishes.forEach((dish)=>{
+            if(dish.categor.toLocaleLowerCase() === "dessert" && (dish.inReserve === false || dish.name === currentVal)){
+                let option = document.createElement("option");
+                option.className = "bg-gray-600 text-gray-200";
+                option.dataset.id = dish.id;
+                option.setAttribute("value", dish.name);
+                option.textContent = dish.name;
+                if(dish.name === currentVal) option.selected = true;
+                ele.append(option);
+            }
+        });
+    });
+}
+function updateAllSelects() {
+    addToSelectStarter();
+    addToSelectMain();
+    addToSelectDessert();
+}
+updateAllSelects()
 
 // new dish inputs
 const dish_name = document.getElementById("dish_name");
@@ -221,9 +229,7 @@ popup.addEventListener("click", (e)=>{
         addDishes();
         popup.classList.add("hidden");
     }
-    addToSelectStarter();
-    addToSelectMain();
-    addToSelectDessert();
+    updateAllSelects()
 })
 
 const edite_dish_name = document.getElementById("edite_dish_name");
@@ -269,9 +275,7 @@ Edite_popup.addEventListener("click", (e)=>{
         console.log("save work");
         Edite_popup.classList.add("hidden");
         addDishes();
-        addToSelectStarter();
-        addToSelectMain();
-        addToSelectDessert();
+        updateAllSelects()
     }
 })
 
@@ -281,32 +285,60 @@ Edite_popup.addEventListener("click", (e)=>{
 const dish_card_section = document.getElementById("dish_card_section");
 const week_cards = document.getElementById("week_cards");
 const selected_dish = document.querySelectorAll(".selected");
-selected_dish.forEach((select)=>{
-    select.addEventListener("change" ,(e)=>{
+// selected_dish.forEach((select)=>{
+//     select.addEventListener("change" ,(e)=>{
+//         const selected_option = e.target.selectedOptions[0];
+//         const dish_id = selected_option.dataset.id;
+//         dishes.forEach((dish)=>{
+//             if(Number(dish_id) === dish.id){
+//                 if(dish.inReserve !== true){
+//                     dish.inReserve = true;
+//                     // inReserve.push(dish)
+//                     // console.log(dish)
+//                     addDishes();
+//                     updateAllSelects() 
+//                     // select.setAttribute("selected","")
+//                 }
+
+                
+//             }
+//         })
+        
+//     })
+// })
+document.addEventListener("change", (e) => {
+    if (e.target.classList.contains("selected")) {
         const selected_option = e.target.selectedOptions[0];
         const dish_id = selected_option.dataset.id;
-        // console.log(selected_option.dataset.id);
-        dishes.forEach((dish)=>{
-            if(Number(dish_id) === dish.id){
+        
+        dishes.forEach((dish) => {
+            if (Number(dish_id) === dish.id) {
                 dish.inReserve = true;
-                // inReserve.push(dish)
-                // console.log(dish)
                 addDishes();
+                updateAllSelects();
             }
-        })
-    })
-})
-//  console.log(dish_card_section.lastChild)
-const reset_btns = document.querySelectorAll(".reset_btn");
-
-reset_btns?.forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-        let index = e.target.dataset.index;
-        console.log("click");
-        // dishes[index].inReserve = false;
-        // console.log(index);
-        // addDishes();
-    });
+        });
+    }
 });
-// console.log(reset_btn)
+
+dish_section.addEventListener("click", (e) => {
+    const resetBtn = e.target.closest(".reset_btn");
+    if (resetBtn) {
+        const index = resetBtn.getAttribute("data-index");
+        if (dishes[index]) {
+            const dishName = dishes[index].name;
+            dishes[index].inReserve = false; 
+            const allSelects = document.querySelectorAll(".selected");
+            allSelects.forEach((select) => {
+                if (select.value === dishName) {
+                    select.value = ""; 
+                    e.target.disabled = true;
+                }
+            });
+            addDishes();
+            updateAllSelects();
+        }
+    }
+});
+
 
