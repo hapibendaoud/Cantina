@@ -321,7 +321,7 @@ document.addEventListener("change", (e) => {
     }
 });
 
-dish_section.addEventListener("click", (e) => {
+dish_section.addEventListener("click", (e) => { 
     const resetBtn = e.target.closest(".reset_btn");
     if (resetBtn) {
         const index = resetBtn.getAttribute("data-index");
