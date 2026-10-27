@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./output.css" rel="stylesheet">    <title>Document</title>
 </head>
-<body class=""> 
-    <header class="w-full h-31 flex flex-row items-center justify-between px-5 bg-gray-800">
-        <div class="p-5">
-            <p class="text-amber-300 eagle-lake-regular ">YouCode · Canteen</p>
-            <h1 class="text-7xl font-extrabold text-white">This week's <span class="text-amber-300">table</span></h1>
+<body class="bg-gray-600"> 
+    <header class="w-full min-h-31 flex flex-col sm:flex-row items-center justify-between px-5 py-4 sm:py-0 bg-gray-800 gap-4 sm:gap-0">
+        <div class="p-2 sm:p-5 text-center sm:text-left">
+            <p class="text-amber-300 eagle-lake-regular">YouCode · Canteen</p>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-extrabold text-white">This week's <span class="text-amber-300">table</span></h1>
         </div>
-        <div class="h-full w-[20%] flex items-end justify-end pr-3.5 pb-3.5">
-            <button class="bg-blue-700 rounded-2xl px-4 py-2 text-white font-bold cursor-pointer">+ New Dish</button>
+        <div class="h-full w-full sm:w-[20%] flex items-center justify-center sm:items-end sm:justify-end pr-0 sm:pr-3.5 pb-0 sm:pb-3.5">
+            <button id="newDish_btn" class="bg-blue-700 rounded-2xl px-4 py-2 text-white font-bold cursor-pointer">+ New Dish</button>
         </div>
     </header>
-    <section class="grid grid-cols-4 gap-x-12 px-10 py-5 bg-gray-600">
+    <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-x-12 px-4 sm:px-10 py-5 bg-gray-600">
         <div class="flex flex-col rounded-2xl bg-gray-700 px-6 py-3 gap-y-3 border border-gray-800">
             <p class="text-gray-300 font-bold">In reserve</p>
             <span class="text-white font-bold text-3xl">0</span>
@@ -33,39 +33,232 @@
             <span class="text-white font-bold text-3xl">Needs veggie</span>
         </div>
     </section>
-    <main class="grid grid-cols-3 w-full h-fit bg-amber-500">
-        <div class="col-span-2 bg-red-600 grid grid-cols-2 gap-10 p-10">
-            <div class="flex flex-col justify-around bg-amber-50 h-100 rounded-2xl">
-                <div>
-                    <h1>Monday</h1>
+    <section class="grid grid-cols-1 md:grid-cols-3 bg-gray-700 h-fit px-4 sm:px-10 py-4 gap-4 md:gap-0">
+        <div class="col-span-1 md:col-span-2 flex items-center justify-center md:justify-start">
+            <h1 class="text-3xl md:text-4xl font-bold text-white">Weekly <span class="text-amber-300">Menu</span></h1>
+        </div>
+        <div class="col-span-1 flex items-center justify-center md:justify-start">
+            <h1 class="text-3xl md:text-4xl font-bold text-white md:pl-8">The pantry</h1>
+        </div>
+    </section>
+    <main class="grid grid-cols-1 lg:grid-cols-3 w-full h-fit">
+        <div id="week_cards" class="col-span-1 lg:col-span-2 bg-gray-600 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 p-4 sm:p-10 static">
+            <div id="Monday" class="week_card flex flex-col justify-around bg-gray-400 h-fit rounded-2xl">
+                <div class="h-[15%] flex items-center justify-center bg-gray-500 rounded-t-2xl">
+                    <h1 class="text-2xl font-bold text-gray-200 py-5">Monday</h1>
                 </div>
-                <div>
-                    <div>
-                        <h3>Starter</h3>
-                        <p>Empty slot</p>
+                <div class="h-[70%] grid grid-rows-3 px-6">
+                    <div class="border-b border-gray-500 flex flex-col justify-center gap-3 px-3">
+                        <h3 class="text-gray-600 font-bold text-lg">Starter</h3>
+                        <!-- <p >Empty slot</p> -->
+                        <div class="w-full">
+                            <select class="Monday dish_select_starter selected font-bold w-full text-xl sm:text-2xl md:text-3xl text-gray-100 italic border-0 focus:outline-none focus:ring-0" name="dish">
+                            
+                            </select>
+                        </div>
                     </div>
-                    <div>
-                        <h3>Main</h3>
-                        <p>Empty slot</p>
+                    <div class="border-b border-gray-500 flex flex-col justify-center gap-3 px-3 ">
+                        <h3 class="text-gray-600 font-bold text-lg">Main</h3>
+                        <select class="Monday dish_select_Main selected font-bold text-xl sm:text-2xl md:text-3xl text-gray-100 italic border-0 focus:outline-none focus:ring-0 rounded-3xl" name="dish" id="">
+                        
+                        </select>
                     </div>
-                    <div>
-                        <h3>Dessert</h3>
-                        <p>Empty slot</p>
+                    <div class="border-b border-gray-500 flex flex-col justify-center gap-3 px-3 ">
+                        <h3 class="text-gray-600 font-bold text-lg">Dessert</h3>
+                        <select class="Monday dish_select_dessert selected font-bold text-xl sm:text-2xl md:text-3xl text-gray-100 italic border-0 focus:outline-none focus:ring-0 rounded-3xl" name="dish" id="">
+                        
+                        </select>
                     </div>
                 </div>
-                <div>
-                    <p>Total</p>
-                    <span>0/50 DH</span>
+                <div class="h-[15%] flex items-center justify-between p-6">
+                    <p class="text-2xl sm:text-3xl font-bold text-white">Total</p>
+                    <p class="text-2xl sm:text-3xl text-white font-extrabold"><span id="Monday_monto">0</span> /50DH</p>
                 </div>
             </div>
-            <div class="bg-amber-50 h-30"></div>
-            <div></div>
+            <div id="Tuesday" class="week_card flex flex-col justify-around bg-gray-400 h-fit rounded-2xl">
+                <div class="h-[15%] flex items-center justify-center bg-gray-500 rounded-t-2xl">
+                    <h1 class="text-2xl font-bold text-gray-200 py-5">Tuesday</h1>
+                </div>
+                <div class="h-[70%] grid grid-rows-3 px-6">
+                    <div class="border-b border-gray-500 flex flex-col justify-center gap-3 px-3">
+                        <h3 class="text-gray-600 font-bold text-lg">Starter</h3>
+                        <!-- <p >Empty slot</p> -->
+                        <select class="Tuesday dish_select_starter selected font-bold text-xl sm:text-2xl md:text-3xl text-gray-100 italic border-0 focus:outline-none focus:ring-0" name="dish" id="">
+                        
+                        </select>
+                    </div>
+                    <div class="border-b border-gray-500 flex flex-col justify-center gap-3 px-3 ">
+                        <h3 class="text-gray-600 font-bold text-lg">Main</h3>
+                        <select class="Tuesday dish_select_Main selected font-bold text-xl sm:text-2xl md:text-3xl text-gray-100 italic border-0 focus:outline-none focus:ring-0 rounded-3xl" name="dish" id="">
+                            
+                        </select>
+                    </div>
+                    <div class="border-b border-gray-500 flex flex-col justify-center gap-3 px-3">
+                        <h3 class="text-gray-600 font-bold text-lg">Dessert</h3>
+                        <select class="Tuesday dish_select_dessert selected font-bold text-xl sm:text-2xl md:text-3xl text-gray-100 italic border-0 focus:outline-none focus:ring-0" name="dish" id="">
+                            
+                        </select>
+                    </div>
+                </div>
+                <div class="h-[15%] flex items-center justify-between p-6">
+                    <p class="text-2xl sm:text-3xl font-bold text-white">Total</p>
+                    <p class="text-2xl sm:text-3xl text-white font-extrabold"><span class="Tuesday_monto">0</span> /50DH</p>
+                </div>
+            </div>
+            <div id="Wednesday" class="week_card flex flex-col justify-around bg-gray-400 h-fit rounded-2xl">
+                <div class="h-[15%] flex items-center justify-center bg-gray-500 rounded-t-2xl">
+                    <h1 class="text-2xl font-bold text-gray-200 py-5">Wednesday</h1>
+                </div>
+                <div class="h-[70%] grid grid-rows-3 px-6">
+                    <div class="border-b border-gray-500 flex flex-col justify-center gap-3 px-3">
+                        <h3 class="text-gray-600 font-bold text-lg">Starter</h3>
+                        <!-- <p >Empty slot</p> -->
+                        <select  class="Wednesday dish_select_starter selected font-bold text-xl sm:text-2xl md:text-3xl text-gray-100 italic border-0 focus:outline-none focus:ring-0" name="dish" id="">
+                            
+                        </select>
+                    </div>
+                    <div class="border-b border-gray-500 flex flex-col justify-center gap-3 px-3 ">
+                        <h3 class="text-gray-600 font-bold text-lg">Main</h3>
+                        <select class="Wednesday dish_select_Main selected font-bold text-xl sm:text-2xl md:text-3xl text-gray-100 italic border-0 focus:outline-none focus:ring-0 rounded-3xl" name="dish" id="">
+                            
+                        </select>
+                    </div>
+                    <div class="border-b border-gray-500 flex flex-col justify-center gap-3 px-3">
+                        <h3 class="text-gray-600 font-bold text-lg">Dessert</h3>
+                        <select class="Wednesday dish_select_dessert selected font-bold text-xl sm:text-2xl md:text-3xl text-gray-100 italic border-0 focus:outline-none focus:ring-0" name="dish" id="">
+                        
+                        </select>
+                    </div>
+                </div>
+                <div class="h-[15%] flex items-center justify-between p-6">
+                    <p class="text-2xl sm:text-3xl font-bold text-white">Total</p>
+                    <p class="text-2xl sm:text-3xl text-white font-extrabold"><span class="Wednesday_monto">0</span> /50DH</p>
+                </div>
+            </div>
+            <div id="Thursday" class="week_card flex flex-col justify-around bg-gray-400 h-fit rounded-2xl">
+                <div class="h-[15%] flex items-center justify-center bg-gray-500 rounded-t-2xl">
+                    <h1 class="text-2xl font-bold text-gray-200 py-5">Thursday</h1>
+                </div>
+                <div class="h-[70%] grid grid-rows-3 px-6">
+                    <div class="border-b border-gray-500 flex flex-col justify-center gap-3 px-3">
+                        <h3 class="text-gray-600 font-bold text-lg">Starter</h3>
+                        <!-- <p >Empty slot</p> -->
+                        <select class="Thursday dish_select_starter selected font-bold text-xl sm:text-2xl md:text-3xl text-gray-100 italic border-0 focus:outline-none focus:ring-0" name="dish" id="">
+                        
+                        </select>
+                    </div>
+                    <div class="border-b border-gray-500 flex flex-col justify-center gap-3 px-3 ">
+                        <h3 class="text-gray-600 font-bold text-lg">Main</h3>
+                        <select class="Thursday dish_select_Main selected font-bold text-xl sm:text-2xl md:text-3xl text-gray-100 italic border-0 focus:outline-none focus:ring-0 rounded-3xl" name="dish" id="">
+                        
+                        </select>
+                    </div>
+                    <div class="border-b border-gray-500 flex flex-col justify-center gap-3 px-3">
+                        <h3 class="text-gray-600 font-bold text-lg">Dessert</h3>
+                        <select class="Thursday dish_select_dessert selected font-bold text-xl sm:text-2xl md:text-3xl text-gray-100 italic border-0 focus:outline-none focus:ring-0" name="dish" id="">
+                        
+                        </select>
+                    </div>
+                </div>
+                <div class="h-[15%] flex items-center justify-between p-6">
+                    <p class="text-2xl sm:text-3xl font-bold text-white">Total</p>
+                    <p class="text-2xl sm:text-3xl text-white font-extrabold"><span class="Thursday_monto">0</span> /50DH</p>
+                </div>
+            </div>
+            <div id="Friday" class="week_card flex flex-col justify-around bg-gray-400 h-fit rounded-2xl">
+                <div class="h-[15%] flex items-center justify-center bg-gray-500 rounded-t-2xl">
+                    <h1 class="text-2xl font-bold text-gray-200 py-5">Friday</h1>
+                </div>
+                <div class="h-[70%] grid grid-rows-3 px-6">
+                    <div class="border-b border-gray-500 flex flex-col justify-center gap-3 px-3">
+                        <h3 class="text-gray-600 font-bold text-lg">Starter</h3>
+                        <select class="Friday dish_select_starter selected font-bold text-xl sm:text-2xl md:text-3xl text-gray-100 italic border-0 focus:outline-none focus:ring-0" name="dish">
+                        </select>
+                    </div>
+                    <div class="border-b border-gray-500 flex flex-col justify-center gap-3 px-3 ">
+                        <h3 class="text-gray-600 font-bold text-lg">Main</h3>
+                        <select class="Friday dish_select_Main selected font-bold text-xl sm:text-2xl md:text-3xl text-gray-100 italic border-0 focus:outline-none focus:ring-0 rounded-3xl" name="dish">
+                        </select>
+                    </div>
+                    <div class="border-b border-gray-500 flex flex-col justify-center gap-3 px-3">
+                        <h3 class="text-gray-600 font-bold text-lg">Dessert</h3>
+                        <select class="Friday dish_select_dessert selected font-bold text-xl sm:text-2xl md:text-3xl text-gray-100 italic border-0 focus:outline-none focus:ring-0" name="dish">
+                        </select>
+                    </div>
+                </div>
+                <div class="h-[15%] flex items-center justify-between p-6">
+                    <p class="text-2xl sm:text-3xl font-bold text-white">Total</p>
+                    <p class="text-2xl sm:text-3xl text-white font-extrabold"><span class="Friday_monto">0</span> /50DH</p>
+                </div>
+            </div>
+            <div id="popup" class="hidden flex items-center justify-center z-50 fixed inset-0 w-full h-full bg-[#0e0b32]/18 backdrop-blur-md backdrop-saturate-159 border border-[#0e0b32]/0 shadow-[0_8px_32px_0_rgba(0,0,0,0)] p-4">
+                <div class="w-full max-w-[520px] h-fit flex flex-col py-6 sm:py-8 px-6 sm:px-10 bg-gray-900 rounded-3xl gap-4 sm:gap-5 max-h-[90vh] overflow-y-auto">
+                    <div class="flex items-center justify-between">
+                        <h1 class="text-2xl sm:text-3xl font-bold text-gray-300 italic">New dish</h1>
+                        <p id="close_popup" class="text-gray-200 text-2xl w-10 h-10 bg-gray-700 flex justify-center items-center rounded-3xl cursor-pointer">x</p>
+                    </div>
+                    <label for="Dish-name" class="text-gray-400">Dish name</label>
+                    <input type="text" id="dish_name" placeholder="Dish Name" class="text-gray-200 bg-gray-700 py-2.5 px-3 rounded-2xl focus:outline-none focus:ring-0">
+                    <label for="Category" class="text-gray-400 ">Category</label>
+                    <select name="Category" id="Category" class="text-gray-400 bg-gray-700 py-2.5 px-3 rounded-2xl focus:outline-none focus:ring-0">
+                        <option value="Starter">Starter</option>
+                        <option value="Main">Main</option>
+                        <option value="Dessert">Dessert</option>
+                    </select>
+                    <label for="Price" class="text-gray-400">Price</label>
+                    <input type="text" id="Price" placeholder="Price" class="text-gray-200 bg-gray-700 py-2.5 px-3 rounded-2xl focus:outline-none focus:ring-0">
+                    <label for="Quality-badge" class="text-gray-400">Quality badge</label>
+                    <select name="Quality-badge" id="quality_Badge" class="text-gray-400 bg-gray-700 py-2.5 px-3 rounded-2xl focus:outline-none focus:ring-0">
+                        <option value="Vegetarian">Vegetarian</option>
+                        <option value="Homemade">Homemade</option>
+                        <option value="Healthy">Healthy</option>
+                        <option value="Spicy">Spicy</option>
+                    </select>
+                    <div class="flex items-center justify-end">
+                        <bottun type="submit" id="cancel_popup" class="bg-gray-700 px-4 py-2 rounded-3xl text-white cursor-pointer hover:bg-gray-400">Cancel</bottun>
+                        <bottun id="save_btn_popup" class="bg-red-700 px-4 py-2 rounded-3xl text-white ml-5 cursor-pointer hover:bg-red-400">Save</bottun>
+                    </div>
+                </div>
+            </div>
+            <div id="Edite_popup" class="hidden flex items-center justify-center z-50 fixed inset-0 w-full h-full bg-[#0e0b32]/18 backdrop-blur-md backdrop-saturate-159 border border-[#0e0b32]/0 shadow-[0_8px_32px_0_rgba(0,0,0,0)] p-4">
+                <div class="w-full max-w-[520px] h-fit flex flex-col py-6 sm:py-8 px-6 sm:px-10 bg-gray-900 rounded-3xl gap-4 sm:gap-5 max-h-[90vh] overflow-y-auto">
+                    <div class="flex items-center justify-between">
+                        <h1 class="text-2xl sm:text-3xl font-bold text-gray-300 italic">Edite dish</h1>
+                        <p id="close_Edite" class="text-gray-200 text-2xl w-10 h-10 bg-gray-700 flex justify-center items-center rounded-3xl cursor-pointer">x</p>
+                    </div>
+                    <label for="Dish-name" class="text-gray-400">Edite Dish name</label>
+                    <input id="edite_dish_name" type="text" name="Dish-name" placeholder="Dish Name" class="text-gray-200 bg-gray-700 py-2.5 px-3 rounded-2xl focus:outline-none focus:ring-0">
+                    <label for="Category" class="text-gray-400 ">Edite Category</label>
+                    <select name="edite_Category" id="edite_Category" class="text-gray-400 bg-gray-700 py-2.5 px-3 rounded-2xl focus:outline-none focus:ring-0">
+                        <option value="Starter">Starter</option>
+                        <option value="Main">Main</option>
+                        <option value="Dessert">Dessert</option>
+                    </select>
+                    <label for="Price" class="text-gray-400">Edite Price</label>
+                    <input id="edite_Price" type="number" name="Price" placeholder="Price" class="text-gray-200 bg-gray-700 py-2.5 px-3 rounded-2xl focus:outline-none focus:ring-0">
+                    <label for="Quality-badge" class="text-gray-400">Edite Quality badge</label>
+                    <select name="Quality-badge" id="edite_qualityBadge" class="text-gray-400 bg-gray-700 py-2.5 px-3 rounded-2xl focus:outline-none focus:ring-0">
+                        <option value="Vegetarian">Vegetarian</option>
+                        <option value="Homemade">Homemade</option>
+                        <option value="Healthy">Healthy</option>
+                        <option value="Spicy">Spicy</option>
+                    </select>
+                    <div class="flex items-center justify-end">
+                        <bottun id="cancel_Edite" class="bg-gray-700 px-4 py-2 rounded-3xl text-white cursor-pointer hover:bg-gray-400">Cancel</bottun>
+                        <bottun id="save_btn_edite" class="bg-red-700 px-4 py-2 rounded-3xl text-white ml-5 cursor-pointer hover:bg-red-400">Save</bottun>
+                    </div>
+                </div>
+            </div>
+            
+        </div>  
+        <div class="col-span-1 w-full h-full">
+            <div class="h-fit w-full flex items-center justify-center py-3.5 bg-gray-700">
+                <input type="text" name="search" id="search_input" placeholder="Search for Dish" class="w-5/6 px-2.5 py-1.5 bg-gray-300 rounded-2xl focus:outline-0 focus:ring-0 text-gray-600">
+            </div>
+            <div id="dish_section" class="w-full bg-gray-500 flex flex-col p-6 sm:p-13 gap-y-5">
+                
+            </div>
         </div>
-        <div class="col-span-1">
-
-        </div>
-
-
     </main>
     <footer>
 

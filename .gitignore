@@ -1,0 +1,14 @@
+# Dependencies
+node_modules/
+node_modules/
+
+# Production output
+output.css
+
+# Environment files
+.env
+.env.local
+
+# OS files
+.DS_Store
+Thumbs.db
